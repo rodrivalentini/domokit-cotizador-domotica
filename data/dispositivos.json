@@ -1,0 +1,18 @@
+[
+  { "id": 1, "nombre": "Placa ESP32 DevKit", "categoria": "Microcontroladores", "protocolo": "WiFi/BLE", "precio": 12500, "icono": "🧠", "descripcion": "Cerebro para tus propios sensores y actuadores con ESPHome." },
+  { "id": 2, "nombre": "Placa ESP8266 NodeMCU", "categoria": "Microcontroladores", "protocolo": "WiFi", "precio": 7800, "icono": "🧩", "descripcion": "Opción económica para proyectos simples de domótica." },
+  { "id": 3, "nombre": "Relé inteligente 1 canal", "categoria": "Control", "protocolo": "WiFi", "precio": 18900, "icono": "🔌", "descripcion": "Se instala detrás de la llave de luz y la hace inteligente." },
+  { "id": 4, "nombre": "Enchufe inteligente con medición", "categoria": "Control", "protocolo": "WiFi", "precio": 14200, "icono": "⚡", "descripcion": "Prende y apaga equipos y mide el consumo en tiempo real." },
+  { "id": 5, "nombre": "Módulo de 4 relés", "categoria": "Control", "protocolo": "WiFi", "precio": 26500, "icono": "🎛️", "descripcion": "Controla persianas, riego o portones desde Home Assistant." },
+  { "id": 6, "nombre": "Sensor de temperatura y humedad", "categoria": "Sensores", "protocolo": "Zigbee", "precio": 11800, "icono": "🌡️", "descripcion": "Mide el clima de cada ambiente para automatizar la climatización." },
+  { "id": 7, "nombre": "Sensor de movimiento", "categoria": "Sensores", "protocolo": "Zigbee", "precio": 13400, "icono": "👁️", "descripcion": "Enciende luces al detectar presencia y ahorra energía." },
+  { "id": 8, "nombre": "Sensor de apertura de puerta", "categoria": "Sensores", "protocolo": "Zigbee", "precio": 9900, "icono": "🚪", "descripcion": "Avisa cuando se abre una puerta o una ventana." },
+  { "id": 9, "nombre": "Sensor de humo y gas", "categoria": "Sensores", "protocolo": "WiFi", "precio": 21600, "icono": "🔥", "descripcion": "Alerta en el celular ante humo o pérdida de gas." },
+  { "id": 10, "nombre": "Lámpara LED RGB E27", "categoria": "Iluminación", "protocolo": "WiFi", "precio": 8700, "icono": "💡", "descripcion": "Millones de colores y escenas para cada momento." },
+  { "id": 11, "nombre": "Tira LED RGB 5 m", "categoria": "Iluminación", "protocolo": "WiFi", "precio": 16300, "icono": "🌈", "descripcion": "Iluminación ambiental para living, quincho o escritorio." },
+  { "id": 12, "nombre": "Cámara WiFi 2K interior", "categoria": "Seguridad", "protocolo": "WiFi", "precio": 38500, "icono": "📷", "imagen": "assets/img/Seguridad/Camara.webp", "descripcion": "Video en vivo, visión nocturna y grabación local." },
+  { "id": 13, "nombre": "Cerradura inteligente", "categoria": "Seguridad", "protocolo": "BLE/WiFi", "precio": 89000, "icono": "🔐", "imagen": "assets/img/Seguridad/Cerradura.webp", "descripcion": "Abrí con código, huella o desde el celular." },
+  { "id": 14, "nombre": "Sirena con luz estroboscópica", "categoria": "Seguridad", "protocolo": "Zigbee", "precio": 24800, "icono": "🚨", "imagen": "assets/img/Seguridad/Sirena.jpg", "descripcion": "Disuade intrusos y se integra con tus sensores." },
+  { "id": 15, "nombre": "Coordinador Zigbee USB", "categoria": "Centrales", "protocolo": "Zigbee", "precio": 29900, "icono": "📡", "imagen": "assets/img/Centrales/Coordinador.webp", "descripcion": "Conecta todos tus dispositivos Zigbee sin depender de la nube." },
+  { "id": 16, "nombre": "Mini PC para Home Assistant", "categoria": "Centrales", "protocolo": "Ethernet", "precio": 185000, "icono": "🖥️", "imagen": "assets/img/Seguridad/MiniPC.webp", "descripcion": "El servidor local que une y automatiza todo tu hogar." }
+]

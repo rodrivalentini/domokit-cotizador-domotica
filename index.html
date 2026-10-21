@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DomoKit | Cotizador de domótica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="marca">
+      <img src="assets/img/logo.png" alt="" width="40" height="40">
+      <div>
+        <h1>DomoKit</h1>
+        <p>Armá tu casa inteligente ambiente por ambiente</p>
+      </div>
+    </div>
+    <div class="acciones-encabezado">
+      <button id="botonUltimoPresupuesto" class="boton boton--borde" hidden>Ver último presupuesto</button>
+      <button id="botonBorrarDatos" class="boton boton--borde">Borrar datos guardados</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="vistaCatalogo" class="distribucion">
+      <div>
+        <div class="filtros">
+          <label>Buscar
+            <input id="campoBusqueda" type="search" placeholder="Ej: sensor, relé, ESP32">
+          </label>
+          <label>Categoría
+            <select id="filtroCategoria"><option value="">Todas</option></select>
+          </label>
+          <label>Ordenar por
+            <select id="selectorOrden">
+              <option value="nombre">Nombre</option>
+              <option value="precioAscendente">Menor precio</option>
+              <option value="precioDescendente">Mayor precio</option>
+            </select>
+          </label>
+        </div>
+        <p id="estadoCarga" class="aviso">Cargando catálogo…</p>
+        <div id="errorCarga" class="aviso aviso--error" hidden>
+          <p id="mensajeError"></p>
+          <button id="botonReintentar" class="boton">Reintentar</button>
+        </div>
+        <div id="catalogo" class="catalogo"></div>
+      </div>
+
+      <aside class="cotizacion">
+        <h2>Tu cotización <span id="contadorDispositivos" class="contador">0</span></h2>
+        <label>Agregar dispositivos en
+          <select id="selectorAmbiente"></select>
+        </label>
+        <ul id="listaCotizacion" class="lista-cotizacion"></ul>
+        <label class="casilla">
+          <input id="casillaInstalacion" type="checkbox"> Incluir instalación y configuración
+        </label>
+        <dl class="totales">
+          <div><dt>Subtotal</dt><dd id="textoSubtotal"></dd></div>
+          <div><dt>Instalación</dt><dd id="textoInstalacion"></dd></div>
+          <div><dt>IVA (21%)</dt><dd id="textoIva"></dd></div>
+          <div class="totales__final"><dt>Total</dt><dd id="textoTotal"></dd></div>
+        </dl>
+        <button id="botonContinuar" class="boton boton--ancho">Continuar con mis datos</button>
+        <button id="botonVaciar" class="boton boton--borde boton--ancho">Vaciar cotización</button>
+      </aside>
+    </section>
+
+    <section id="vistaDatos" class="panel" hidden>
+      <h2>Tus datos de contacto</h2>
+      <div id="resumenFinal"></div>
+      <form id="formularioCliente" class="formulario">
+        <label>Nombre y apellido <input name="nombre" required minlength="3"></label>
+        <label>Email <input name="email" type="email" required></label>
+        <label>Teléfono <input name="telefono" type="tel" required></label>
+        <label>Ciudad <input name="ciudad" required></label>
+        <div class="formulario__botones">
+          <button type="button" id="botonVolver" class="boton boton--borde">Volver al catálogo</button>
+          <button type="submit" class="boton">Confirmar presupuesto</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="vistaComprobante" class="panel" hidden>
+      <h2>Presupuesto <span id="numeroPresupuesto"></span></h2>
+      <p>Fecha: <span id="fechaPresupuesto"></span></p>
+      <p>Cliente: <strong id="nombreCliente"></strong> · <span id="contactoCliente"></span></p>
+      <div id="detallePresupuesto"></div>
+      <div class="formulario__botones">
+        <button id="botonImprimir" class="boton boton--borde">Imprimir</button>
+        <button id="botonNuevoPresupuesto" class="boton">Armar otro presupuesto</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
