@@ -21,5 +21,7 @@ function borrarDeStorage(clave) {
 }
 
 function vaciarStorage() {
-  localStorage.clear();
+  Object.values(CLAVES_STORAGE).forEach(clave => {
+    localStorage.removeItem(clave);
+  });
 }

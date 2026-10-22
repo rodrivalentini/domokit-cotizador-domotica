@@ -38,7 +38,7 @@ Necesita internet para cargar SweetAlert2, Toastify y las tipografías.
 │   ├── storage.js    # funciones de localStorage
 │   └── app.js        # DOM y lógica del simulador
 ├── data/dispositivos.json
-└── assets/img/logo.svg
+└── assets/img/logo.png
 ```
 
 ## Dónde está cada requisito
