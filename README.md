@@ -9,7 +9,7 @@ Simulador de cotización de domótica: se arma un kit de dispositivos por ambien
 1. Ver el catálogo (buscar, filtrar por categoría, ordenar).
 2. Elegir un ambiente y agregar dispositivos.
 3. Modificar cantidades, quitar dispositivos o vaciar la cotización.
-4. Incluir o no la instalación y ver subtotal, IVA y total.
+4. Elegir si se incluye la instalación, que suma un 10% del precio de cada unidad, y ver subtotal, IVA y total.
 5. Completar los datos de contacto.
 6. Confirmar y obtener el presupuesto (se puede imprimir o volver a ver más tarde).
 
@@ -21,6 +21,12 @@ El catálogo se carga con `fetch` desde `data/dispositivos.json`, por eso **no f
 - Terminal: `npx serve` o `python -m http.server`.
 
 Necesita internet para cargar SweetAlert2, Toastify y las tipografías.
+
+## Cálculo del presupuesto
+
+- La instalación es opcional y se puede activar o desactivar desde la cotización.
+- Si se incluye, se suma el 10% del precio de cada unidad seleccionada.
+- El IVA del 21% se calcula sobre el subtotal más la instalación.
 
 ## Estructura
 

@@ -1,5 +1,5 @@
 const IVA = 0.21;
-const COSTO_INSTALACION_POR_DISPOSITIVO = 6000;
+const PORCENTAJE_INSTALACION = 0.10;
 const AMBIENTES = ["Living", "Cocina", "Dormitorio", "Oficina", "Quincho", "Exterior"];
 
 const formatoMoneda = new Intl.NumberFormat("es-AR", {
@@ -105,7 +105,11 @@ function persistirCotizacion() {
 function calcularTotales() {
   const cantidadTotal = lineas.reduce((acumulado, { cantidad }) => acumulado + cantidad, 0);
   const subtotal = lineas.reduce((acumulado, { precio, cantidad }) => acumulado + precio * cantidad, 0);
-  const instalacion = conInstalacion ? cantidadTotal * COSTO_INSTALACION_POR_DISPOSITIVO : 0;
+  const instalacion = conInstalacion
+    ? lineas.reduce((acumulado, { precio, cantidad }) => (
+      acumulado + Math.round(precio * PORCENTAJE_INSTALACION) * cantidad
+    ), 0)
+    : 0;
   const iva = (subtotal + instalacion) * IVA;
   return { cantidadTotal, subtotal, instalacion, iva, total: subtotal + instalacion + iva };
 }
@@ -153,8 +157,8 @@ function agregarDispositivo(idDispositivo) {
   if (lineaExistente) {
     lineaExistente.cantidad++;
   } else {
-    const { nombre, precio } = dispositivo;
-    lineas.push({ clave, nombre, precio, ambiente, cantidad: 1 });
+    const { id, nombre, categoria, precio } = dispositivo;
+    lineas.push({ clave, id, nombre, categoria, precio, ambiente, cantidad: 1 });
   }
   actualizarCotizacion();
   mostrarAviso(`${dispositivo.nombre} agregado en ${ambiente}`);
